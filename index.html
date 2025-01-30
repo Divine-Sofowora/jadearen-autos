@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercedes Car Specs Section</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for Parallax Effect */
+        .parallax {
+            background-image: url('assets/pexels-mikebirdy-2365572-1.jpg'); /* Replace with your image */
+            background-attachment: fixed; /* Creates the parallax effect */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 500px; /* Adjust height as needed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .parallax h2 {
+            font-size: 3rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .content-section {
+            padding: 60px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar  -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="https://via.placeholder.com/150x50" alt="Logo" width="150" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--  Section with Background Image  -->
+    <section class="parallax">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-6 text-end">
+                    <h2 class="display-4 fw-bold">Mercedes-Benz S-Class</h2>
+                    <p class="lead">
+                        Engine: 3.0L Inline-6 Turbo<br>
+                        Horsepower: 429 HP<br>
+                        Torque: 384 lb-ft<br>
+                        0-60 mph: 4.5 seconds<br>
+                        Top Speed: 155 mph (electronically limited)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore Our Favourite Brands Section -->
+    <section class="container my-5">
+        <h2 class="text-center mb-5">Explore Our Favourite Brands</h2>
+        <div class="row">
+            <!-- Brand 1 -->
+            <div class="col-md-4 col-lg-2 text-center mb-4">
+                <img src="assets/Mercedes-Benz_free_logo.png" alt="Brand Logo" class="img-fluid mb-3">
+                <h5>Mercedes-Benz</h5>
+            </div>
+            <!-- Brand 2 -->
+            <div class="col-md-4 col-lg-2 text-center mb-4">
+                <img src="assets/BMW.png" alt="Brand Logo" class="img-fluid mb-3">
+                <h5>BMW</h5>
+            </div>
+            <!-- Brand 3 -->
+            <div class="col-md-4 col-lg-2 text-center mb-4">
+                <img src="assets/Chevrolet 1.png" alt="Brand Logo" class="img-fluid mb-3">
+                <h5>Chevrolet</h5>
+            </div>
+            <!-- Brand 4 -->
+            <div class="col-md-4 col-lg-2 text-center mb-4">
+                <img src="assets/Group.png" alt="Brand Logo" class="img-fluid mb-3">
+                <h5>Tesla</h5>
+            </div>
+            <!-- Brand 5 -->
+            <div class="col-md-4 col-lg-2 text-center mb-4">
+                <img src="assets/image 257.png" alt="Brand Logo" class="img-fluid mb-3">
+                <h5>Mazda</h5>
+            </div>
+            <!-- Brand 6 -->
+            <div class="col-md-4 col-lg-2 text-center mb-4">
+                <img src="assets/Toyota_EU 1.png" alt="Brand Logo" class="img-fluid mb-3">
+                <h5>Toyota</h5>
+            </div>
+        </div>
+    </section>
+
+    <!-- Car Cards Section -->
+    <section class="container my-5">
+        <h2 class="text-center mb-5">Explore Our Car Collection</h2>
+        <div class="row g-4">
+            <!-- Card 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://via.placeholder.com/400x200" class="card-img-top rounded-top" alt="Car Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Mercedes-Benz S-Class</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">2023</h6>
+                        <hr class="my-3">
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="text-muted">50,000 miles</span>
+                            <span class="text-muted">Petrol</span>
+                            <span class="text-muted">Automatic</span>
+                        </div>
+                        <hr class="my-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="h5 mb-0">$75,000</div>
+                            <a href="#" class="btn btn-primary btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://via.placeholder.com/400x200" class="card-img-top rounded-top" alt="Car Image">
+                    <div class="card-body">
+                        <h5 class="card-title">BMW 7 Series</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">2022</h6>
+                        <hr class="my-3">
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="text-muted">30,000 miles</span>
+                            <span class="text-muted">Diesel</span>
+                            <span class="text-muted">Automatic</span>
+                        </div>
+                        <hr class="my-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="h5 mb-0">$70,000</div>
+                            <a href="#" class="btn btn-primary btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://via.placeholder.com/400x200" class="card-img-top rounded-top" alt="Car Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Audi A8</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">2021</h6>
+                        <hr class="my-3">
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="text-muted">40,000 miles</span>
+                            <span class="text-muted">Petrol</span>
+                            <span class="text-muted">Automatic</span>
+                        </div>
+                        <hr class="my-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="h5 mb-0">$65,000</div>
+                            <a href="#" class="btn btn-primary btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://via.placeholder.com/400x200" class="card-img-top rounded-top" alt="Car Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Tesla Model S</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">2023</h6>
+                        <hr class="my-3">
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="text-muted">20,000 miles</span>
+                            <span class="text-muted">Electric</span>
+                            <span class="text-muted">Automatic</span>
+                        </div>
+                        <hr class="my-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="h5 mb-0">$85,000</div>
+                            <a href="#" class="btn btn-primary btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 5 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://via.placeholder.com/400x200" class="card-img-top rounded-top" alt="Car Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Porsche Panamera</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">2022</h6>
+                        <hr class="my-3">
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="text-muted">25,000 miles</span>
+                            <span class="text-muted">Petrol</span>
+                            <span class="text-muted">Automatic</span>
+                        </div>
+                        <hr class="my-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="h5 mb-0">$90,000</div>
+                            <a href="#" class="btn btn-primary btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 6 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://via.placeholder.com/400x200" class="card-img-top rounded-top" alt="Car Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Lexus LS</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">2021</h6>
+                        <hr class="my-3">
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="text-muted">35,000 miles</span>
+                            <span class="text-muted">Hybrid</span>
+                            <span class="text-muted">Automatic</span>
+                        </div>
+                        <hr class="my-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="h5 mb-0">$60,000</div>
+                            <a href="#" class="btn btn-primary btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
