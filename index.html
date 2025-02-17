@@ -124,133 +124,171 @@
     <!-- Car Cards Section -->
     <section class="container my-5">
         <h2 class="text-center mb-5">Explore Our Car Collection</h2>
-        <div class="row g-4">
-            <!-- Card 1 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm">
-                    <img src="https://via.placeholder.com/400x200" class="card-img-top rounded-top" alt="Car Image">
-                    <div class="card-body">
-                        <h5 class="card-title">Mercedes-Benz S-Class</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">2023</h6>
-                        <hr class="my-3">
-                        <div class="d-flex justify-content-between mb-3">
-                            <span class="text-muted">50,000 miles</span>
-                            <span class="text-muted">Petrol</span>
-                            <span class="text-muted">Automatic</span>
+        <div id="carCollectionCarousel" class="carousel slide" data-bs-ride="carousel">
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carCollectionCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carCollectionCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carCollectionCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+    
+            <!-- Carousel Items -->
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="row g-4">
+                        <!-- Card 1 -->
+                        <div class="col-md-6">
+                            <div class="card h-100 shadow-sm">
+                                <img src="https://via.placeholder.com/400x200" class="card-img-top rounded-top" alt="Car Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Mercedes-Benz S-Class</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">2023</h6>
+                                    <hr class="my-3">
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <span class="text-muted">50,000 miles</span>
+                                        <span class="text-muted">Petrol</span>
+                                        <span class="text-muted">Automatic</span>
+                                    </div>
+                                    <hr class="my-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="h5 mb-0">$75,000</div>
+                                        <a href="#" class="btn btn-primary btn-sm">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <hr class="my-3">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="h5 mb-0">$75,000</div>
-                            <a href="#" class="btn btn-primary btn-sm">View Details</a>
+                        <!-- Card 2 -->
+                        <div class="col-md-6">
+                            <div class="card h-100 shadow-sm">
+                                <img src="https://via.placeholder.com/400x200" class="card-img-top rounded-top" alt="Car Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">BMW 7 Series</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">2022</h6>
+                                    <hr class="my-3">
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <span class="text-muted">30,000 miles</span>
+                                        <span class="text-muted">Diesel</span>
+                                        <span class="text-muted">Automatic</span>
+                                    </div>
+                                    <hr class="my-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="h5 mb-0">$70,000</div>
+                                        <a href="#" class="btn btn-primary btn-sm">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="row g-4">
+                        <!-- Card 3 -->
+                        <div class="col-md-6">
+                            <div class="card h-100 shadow-sm">
+                                <img src="https://via.placeholder.com/400x200" class="card-img-top rounded-top" alt="Car Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Audi A8</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">2021</h6>
+                                    <hr class="my-3">
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <span class="text-muted">40,000 miles</span>
+                                        <span class="text-muted">Petrol</span>
+                                        <span class="text-muted">Automatic</span>
+                                    </div>
+                                    <hr class="my-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="h5 mb-0">$65,000</div>
+                                        <a href="#" class="btn btn-primary btn-sm">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 4 -->
+                        <div class="col-md-6">
+                            <div class="card h-100 shadow-sm">
+                                <img src="https://via.placeholder.com/400x200" class="card-img-top rounded-top" alt="Car Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Tesla Model S</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">2023</h6>
+                                    <hr class="my-3">
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <span class="text-muted">20,000 miles</span>
+                                        <span class="text-muted">Electric</span>
+                                        <span class="text-muted">Automatic</span>
+                                    </div>
+                                    <hr class="my-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="h5 mb-0">$85,000</div>
+                                        <a href="#" class="btn btn-primary btn-sm">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+                    <div class="row g-4">
+                        <!-- Card 5 -->
+                        <div class="col-md-6">
+                            <div class="card h-100 shadow-sm">
+                                <img src="https://via.placeholder.com/400x200" class="card-img-top rounded-top" alt="Car Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Porsche Panamera</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">2022</h6>
+                                    <hr class="my-3">
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <span class="text-muted">25,000 miles</span>
+                                        <span class="text-muted">Petrol</span>
+                                        <span class="text-muted">Automatic</span>
+                                    </div>
+                                    <hr class="my-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="h5 mb-0">$90,000</div>
+                                        <a href="#" class="btn btn-primary btn-sm">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 6 -->
+                        <div class="col-md-6">
+                            <div class="card h-100 shadow-sm">
+                                <img src="https://via.placeholder.com/400x200" class="card-img-top rounded-top" alt="Car Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Lexus LS</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">2021</h6>
+                                    <hr class="my-3">
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <span class="text-muted">35,000 miles</span>
+                                        <span class="text-muted">Hybrid</span>
+                                        <span class="text-muted">Automatic</span>
+                                    </div>
+                                    <hr class="my-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="h5 mb-0">$60,000</div>
+                                        <a href="#" class="btn btn-primary btn-sm">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Card 2 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm">
-                    <img src="https://via.placeholder.com/400x200" class="card-img-top rounded-top" alt="Car Image">
-                    <div class="card-body">
-                        <h5 class="card-title">BMW 7 Series</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">2022</h6>
-                        <hr class="my-3">
-                        <div class="d-flex justify-content-between mb-3">
-                            <span class="text-muted">30,000 miles</span>
-                            <span class="text-muted">Diesel</span>
-                            <span class="text-muted">Automatic</span>
-                        </div>
-                        <hr class="my-3">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="h5 mb-0">$70,000</div>
-                            <a href="#" class="btn btn-primary btn-sm">View Details</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 3 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm">
-                    <img src="https://via.placeholder.com/400x200" class="card-img-top rounded-top" alt="Car Image">
-                    <div class="card-body">
-                        <h5 class="card-title">Audi A8</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">2021</h6>
-                        <hr class="my-3">
-                        <div class="d-flex justify-content-between mb-3">
-                            <span class="text-muted">40,000 miles</span>
-                            <span class="text-muted">Petrol</span>
-                            <span class="text-muted">Automatic</span>
-                        </div>
-                        <hr class="my-3">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="h5 mb-0">$65,000</div>
-                            <a href="#" class="btn btn-primary btn-sm">View Details</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 4 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm">
-                    <img src="https://via.placeholder.com/400x200" class="card-img-top rounded-top" alt="Car Image">
-                    <div class="card-body">
-                        <h5 class="card-title">Tesla Model S</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">2023</h6>
-                        <hr class="my-3">
-                        <div class="d-flex justify-content-between mb-3">
-                            <span class="text-muted">20,000 miles</span>
-                            <span class="text-muted">Electric</span>
-                            <span class="text-muted">Automatic</span>
-                        </div>
-                        <hr class="my-3">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="h5 mb-0">$85,000</div>
-                            <a href="#" class="btn btn-primary btn-sm">View Details</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 5 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm">
-                    <img src="https://via.placeholder.com/400x200" class="card-img-top rounded-top" alt="Car Image">
-                    <div class="card-body">
-                        <h5 class="card-title">Porsche Panamera</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">2022</h6>
-                        <hr class="my-3">
-                        <div class="d-flex justify-content-between mb-3">
-                            <span class="text-muted">25,000 miles</span>
-                            <span class="text-muted">Petrol</span>
-                            <span class="text-muted">Automatic</span>
-                        </div>
-                        <hr class="my-3">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="h5 mb-0">$90,000</div>
-                            <a href="#" class="btn btn-primary btn-sm">View Details</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 6 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm">
-                    <img src="https://via.placeholder.com/400x200" class="card-img-top rounded-top" alt="Car Image">
-                    <div class="card-body">
-                        <h5 class="card-title">Lexus LS</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">2021</h6>
-                        <hr class="my-3">
-                        <div class="d-flex justify-content-between mb-3">
-                            <span class="text-muted">35,000 miles</span>
-                            <span class="text-muted">Hybrid</span>
-                            <span class="text-muted">Automatic</span>
-                        </div>
-                        <hr class="my-3">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="h5 mb-0">$60,000</div>
-                            <a href="#" class="btn btn-primary btn-sm">View Details</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+            <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carCollectionCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carCollectionCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+
         </div>
     </section>
 
