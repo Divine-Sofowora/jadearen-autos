@@ -26,6 +26,9 @@
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         .car-card:hover {
             transform: translateY(-5px);
@@ -39,6 +42,7 @@
         .car-img-container {
             height: 200px;
             overflow: hidden;
+            position: relative;
         }
         .car-img-container img {
             width: 100%;
@@ -47,6 +51,9 @@
         }
         .car-details {
             padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
         .car-price {
             font-size: 1.5rem;
@@ -70,18 +77,7 @@
             border-radius: 8px;
             margin-bottom: 20px;
         }
-    
-        .car-overview-sidebar {
-            background-color: var(--light-gray);
-            padding: 20px;
-            border-radius: 8px;
-        }
-        .overview-item {
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px solid #dee2e6;
-            padding: 10px 0;
-        }
+        
         .view-details-btn {
             display: flex;
             align-items: center;
@@ -89,42 +85,189 @@
             gap: 5px;
             color: var(--primary-color);
             text-decoration: none;
+            margin-top: auto;
         }
         .view-details-btn:hover {
             text-decoration: underline;
         }
+        .footer ul.list-unstyled li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer ul.list-unstyled li a:hover {
+            color: #FFD700;
+        }
+
+        .footer {
+            background-color: #050B20;
+            color: white;
+            padding: 40px 0 20px;
+        }
+
+        .footer a {
+            color: #fff;
+            opacity: 0.8;
+        }
+
+        .footer a:hover {
+            opacity: 1;
+            color: #fff;
+        }
+        
+        /* Image paginator styles */
+        .image-paginator {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            z-index: 10;
+        }
+        
+        .image-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .image-dot.active {
+            background-color: var(--primary-color);
+        }
+        
+        .image-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            background-color: rgba(255, 255, 255, 0.7);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .car-img-container:hover .image-nav {
+            opacity: 1;
+        }
+        
+        .image-nav.prev {
+            left: 10px;
+        }
+        
+        .image-nav.next {
+            right: 10px;
+        }
+        
+        /* Transparent Navbar Styles */
+        .navbar {
+            background-color: transparent !important;
+            position: absolute;
+            width: 100%;
+            z-index: 1000;
+            padding: 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand, 
+        .navbar-nav .nav-link {
+            color: black !important;
+            text-shadow: none;
+        }
+
+        /* Scrolled state - white navbar with black text */
+        .navbar.scrolled {
+            background-color: white !important;
+            padding: 5px 0;
+            position: fixed;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        
+
+        /* Hover states */
+        .navbar-nav .nav-link:hover {
+            color: #ddd !important;
+        }
+
+        .navbar.scrolled .navbar-nav .nav-link:hover {
+            color: #555 !important;
+        }
+        
+        /* Logo image styling */
+        .navbar-brand img {
+            height: 40px; /* Fixed height */
+            width: auto; /* Maintain aspect ratio */
+            max-width: 150px; /* Maximum width */
+            transition: all 0.3s ease; /* Smooth transition */
+        }
+
+        .navbar.scrolled .navbar-brand img {
+            height: 30px; /* Smaller when scrolled */
+        }
+
+        /* Adjust content to account for fixed navbar */
+        body {
+            padding-top: 0;
+        }
+
+        /* Ensure content isn't hidden behind navbar */
+        section:first-of-type {
+            margin-top: 0;
+        }
+        
+        /* Parallax Effect */
+        
     </style>
 </head>
 <body>
     
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Navigation -->
+   <nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">JA
-            <!-- <img src="#" alt="Logo" width="150" height="50"> -->
-        </a>
+        <a class="navbar-brand" href="index.html"><img src="/assets/ja-logo.jpeg" alt="logo"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link text-dark" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="vehicle.html">Vehicle listings</a>
+                    <a class="nav-link text-dark" href="vehicle.html">Vehicle listings</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
+                    <a class="nav-link text-dark" href="contact.html">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about.html">About</a>
+                    <a class="nav-link text-dark" href="about.html">About</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
 
+    <!-- Parallax Section with Background Image -->
+    <section class="parallax">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-6 text-end">
+                    <!-- Optional content can go here -->
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Main Content -->
     <div class="container my-5">
@@ -193,36 +336,6 @@
                     </div>
                     <button class="btn btn-primary w-100" id="applyFilters">Apply Filters</button>
                 </div>
-
-                <!-- Car Overview Sidebar -->
-                <div class="car-overview-sidebar mt-4">
-                    <h4>Car Overview</h4>
-                    <hr>
-                    <div class="overview-item">
-                        <span>Body</span>
-                        <span id="overviewBody">Sedan</span>
-                    </div>
-                    <div class="overview-item">
-                        <span>Mileage</span>
-                        <span id="overviewMileage">50 Miles</span>
-                    </div>
-                    <div class="overview-item">
-                        <span>Fuel Type</span>
-                        <span id="overviewFuel">Petrol</span>
-                    </div>
-                    <div class="overview-item">
-                        <span>Year</span>
-                        <span id="overviewYear">2023</span>
-                    </div>
-                    <div class="overview-item">
-                        <span>Transmission</span>
-                        <span id="overviewTransmission">Automatic</span>
-                    </div>
-                    <div class="overview-item">
-                        <span>Drive Type</span>
-                        <span id="overviewDrive">All-Wheel</span>
-                    </div>
-                </div>
             </div>
 
             <!-- Car Listings -->
@@ -244,7 +357,6 @@
                     <!-- Car cards will be dynamically inserted here -->
                 </div>
 
-                <!-- Pagination
                 <nav aria-label="Page navigation">
                     <ul class="pagination justify-content-center mt-4">
                         <li class="page-item disabled">
@@ -252,7 +364,7 @@
                         </li>
                         <li class="page-item active"><a class="page-link" href="#">1</a></li>
                         <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                         <!-- <li class="page-item"><a class="page-link" href="#">3</a></li> -->
                         <li class="page-item">
                             <a class="page-link" href="#">Next</a>
                         </li>
@@ -260,7 +372,7 @@
                 </nav>
             </div>
         </div>
-    </div> -->
+    </div> 
 
     <!-- Modal for Car Details -->
     <div class="modal fade" id="carDetailModal" tabindex="-1" aria-hidden="true">
@@ -273,7 +385,24 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <img src="/api/placeholder/600/400" alt="Car Image" class="img-fluid rounded" id="modalImage">
+                            <div class="position-relative">
+                                <div id="modalImageCarousel" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner" id="modalCarouselInner">
+                                        <!-- Images will be inserted here -->
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#modalImageCarousel" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#modalImageCarousel" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                    <div class="carousel-indicators" id="modalCarouselIndicators">
+                                        <!-- Indicators will be inserted here -->
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-md-6">
                             <h4 id="modalCarName">Car Name</h4>
@@ -285,8 +414,9 @@
                             </div>
                             <p id="modalDescription">Car description goes here.</p>
                             <div class="d-grid gap-2">
-                                <button class="btn btn-primary">Schedule Test Drive</button>
-                                <button class="btn btn-outline-secondary">Contact Dealer</button>
+                                <a href="contact.html">
+                                    <button class="btn btn-outline-secondary">Contact Dealer</button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -295,9 +425,77 @@
         </div>
     </div>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <!-- Subscription Section (Full Width) -->
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h4>Join BoxCar</h4>
+                    <p>Receive pricing updates, shopping tips & more!</p>
+                    <form class="d-flex justify-content-center">
+                        <input type="email" class="form-control me-2" placeholder="Your email address" style="max-width: 300px;">
+                        <button class="btn btn-primary">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Other Sections -->
+            <div class="row mt-4">
+                <!-- Quick Links Section -->
+                <div class="col-md-3">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="vehicle.html">Services</a ></li>
+                        <li><a href="contact.html">Terms</a></li>
+                    </ul>
+                </div>
+            
+                <!-- Our Brands Section -->
+                <div class="col-md-3">
+                    <h5>Our Brands</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Toyota</a></li>
+                        <li><a href="#">Pesache</a></li>
+                        <li><a href="#">Audit</a></li>
+                        <li><a href="#">BMW</a></li>
+                        <li><a href="#">Volkswagen</a></li>
+                    </ul>
+                </div>
+            
+                <!-- Vehicles Type Section -->
+                <div class="col-md-3">
+                    <h5>Vehicles Type</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Sedan</a></li>
+                        <li><a href="#">Hatchback</a></li>
+                        <li><a href="#">SUV</a></li>
+                        <li><a href="#">Hybrid</a></li>
+                        <li><a href="#">Convertible</a></li>
+                    </ul>
+                </div>
+            
+            <!-- Social Media and Copyright Section -->
+            <div class="row mt-4">
+                <div class="col-md-12 text-center">
+                    <h5>Connect With Us</h5>
+                    <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="col-md-12 text-center mt-3">
+                    <p>&copy; 2024 Compix.com. All rights reserved.</p>
+                    <p><a href="#">Terms & Conditions</a> | <a href="#">Privacy Notice</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Car data
+        // Car data with multiple images
         const cars = [
             {
                 id: 1,
@@ -308,21 +506,20 @@
                 transmission: "Automatic",
                 fuel: "Petrol",
                 body: "Sedan",
-                image: "/api/placeholder/400/300",
-                
-                description: "3.5 L/V6 PowerTrain Momentum Sale AWD. 20 Miles. A luxurious sedan offering an exceptional driving experience with advanced technology and comfort features."
+                images: ["assets/toyota_camry.jpeg", "assets/toyota_camry-side.jpeg", "assets/2020_toyota_camry-back.jpeg"],
+                description: " L/V6 PowerTrain Momentum Sale AWD. 20 Miles. A luxurious sedan offering an exceptional driving experience with advanced technology and comfort features."
             },
             {
                 id: 2,
-                name: "C-Class - 2023",
+                name: "Ford Mustang",
                 year: 2023,
-                price: 150000,
+                price: 80000,
                 mileage: 50,
                 transmission: "Automatic",
                 fuel: "Petrol",
                 body: "Sedan",
-                image: "/api/placeholder/400/300",
-                description: "4.0 L/V8 PowerTrain Momentum Sale AWD. 50 Miles. Elegance meets performance in this sophisticated sedan. Premium materials and cutting-edge technology."
+                images: ["assets/2015_ford_mustang.jpeg", "assets/2015_ford_mustang-side.jpeg", "assets/ford_mustard back.jpeg"],
+                description: " L/V8 PowerTrain Momentum Sale AWD. 50 Miles. Elegance meets performance in this sophisticated sedan. Premium materials and cutting-edge technology."
             },
             {
                 id: 3,
@@ -333,9 +530,8 @@
                 transmission: "Manual",
                 fuel: "Diesel",
                 body: "Van",
-                image: "/api/placeholder/400/300",
-
-                description: "4.0 L/V6 PowerTrain Momentum Sale AWD. 2000 Miles. Versatile and dependable, perfect for both commercial use and family adventures."
+                images: ["assets/ford .jpg", " assets/van side.jpg", "assets/vanBack.jpg"],
+                description: " L/V6 PowerTrain Momentum Sale AWD. 2000 Miles. Versatile and dependable, perfect for both commercial use and family adventures."
             },
             {
                 id: 4,
@@ -346,9 +542,8 @@
                 transmission: "Automatic",
                 fuel: "Petrol",
                 body: "SUV",
-                image: "/api/placeholder/400/300",
-                badge: "Low Mileage",
-                description: "4.0 L/V8 PowerTrain Momentum Sale AWD. 50 Miles. Luxury SUV combining elegant styling, robust performance, and superior comfort."
+                images: ["assets/glc.jpeg", "assets/glcc back.jpeg", "assets/glc side.jpeg"],
+                description: " L/V8 PowerTrain Momentum Sale AWD. 50 Miles. Luxury SUV combining elegant styling, robust performance, and superior comfort."
             },
             {
                 id: 5,
@@ -359,46 +554,56 @@
                 transmission: "Automatic",
                 fuel: "Petrol",
                 body: "Sedan",
-                image: "/api/placeholder/400/300",
-                description: "3.5 L/V6 PowerTrain Momentum Sale AWD. 50 Miles. Premium sedan with cutting-edge technology and refined interior. Excellent handling and performance."
+                images: ["assets/audi.jpg", "assets/fontAudi.avif", "assets/audisidee.avif"],
+                description: " L/V6 PowerTrain Momentum Sale AWD. 50 Miles. Premium sedan with cutting-edge technology and refined interior. Excellent handling and performance."
             },
             {
                 id: 6,
                 name: "Audi A4 4.5 New",
                 year: 2023,
-                price: 250000,
+                price: 25000,
                 mileage: 60,
                 transmission: "Automatic",
                 fuel: "Petrol",
                 body: "Sedan",
-                image: "/api/placeholder/400/300",
-                description: "3.5 L/V6 PowerTrain Momentum Sale AWD. 60 Miles. Compact luxury sedan with sporty performance and sophisticated technology."
+                images: ["assets/audi a4.jpg", "assets/audiInside.jpg", "assets/audBack.jpg"],
+                description: " L/V6 PowerTrain Momentum Sale AWD. 60 Miles. Compact luxury sedan with sporty performance and sophisticated technology."
             },
             {
                 id: 7,
                 name: "Ranger Black - 2021",
                 year: 2021,
-                price: 165000,
+                price: 16000,
                 mileage: 250,
                 transmission: "Manual",
                 fuel: "Petrol",
                 body: "Pickup",
-                image: "/api/placeholder/400/300",
-                badge: "Sale",
-                description: "3.0 L/V6 PowerTrain Momentum Sale AWD. 250 Miles. Powerful pickup with rugged capability and impressive towing capacity."
+                images: ["assets/2021_ford_ranger.jpeg", "assets/2021_ford_ranger-back.jpeg", "assets/2021_ford_ranger back.jpeg"],
+                description: " L/V6 PowerTrain Momentum Sale AWD. 250 Miles. Powerful pickup with rugged capability and impressive towing capacity."
             },
             {
                 id: 8,
-                name: "Mercedes-Benz C Class",
+                name: "Lexus SUV",
                 year: 2023,
                 price: 35000,
                 mileage: 120,
                 transmission: "Automatic",
                 fuel: "Petrol",
                 body: "Sedan",
-                image: "/api/placeholder/400/300",
-
-                description: "2.0 L/PowerTrain Momentum Sale AWD. 120 Miles. Refined luxury sedan with meticulous craftsmanship and innovative technology."
+                images: ["assets/2013_lexus_rx.jpeg", "assets/2013_lexus_side.jpeg", "assets/2013_lexus_back.jpeg"],
+                description: " L/PowerTrain Momentum Sale AWD. 120 Miles. Refined luxury sedan with meticulous craftsmanship and innovative technology."
+            },
+            {
+                id: 9,
+                name: "Ford SUV",
+                year: 2020,
+                price: 12000,
+                mileage: 120,
+                transmission: "Automatic",
+                fuel: "Petrol",
+                body: "Sedan",
+                images: ["assets/2020_ford_edge.jpeg", "assets/2020_ford_edge-back.jpeg", "assets/2020_ford_edge-side.jpeg"],
+                description: " L/PowerTrain Momentum Sale AWD. 120 Miles. Refined luxury sedan with meticulous craftsmanship and innovative technology."
             }
         ];
 
@@ -407,14 +612,30 @@
             return '$' + price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         }
 
-        // Create car card
+        // Create car card with image pagination
         function createCarCard(car) {
+            let imageDotsHtml = '';
+            for (let i = 0; i < Math.min(car.images.length, 3); i++) {
+                imageDotsHtml += `<div class="image-dot ${i === 0 ? 'active' : ''}" data-index="${i}"></div>`;
+            }
+            
             return `
-                <div class="col-md-6 col-lg-4 car-item" data-id="${car.id}">
+                <div class="col-md-6 col-lg-4 car-item mb-4" data-id="${car.id}">
                     <div class="car-card">
-                       
                         <div class="car-img-container">
-                            <img src="${car.image}" alt="${car.name}">
+                            <img src="${car.images[0]}" alt="${car.name}" class="car-image" data-car-id="${car.id}" data-current-index="0">
+                            ${car.badge ? `<span class="badge-corner badge bg-danger">${car.badge}</span>` : ''}
+                            
+                            <div class="image-paginator">
+                                ${imageDotsHtml}
+                            </div>
+                            
+                            <div class="image-nav prev" data-car-id="${car.id}" data-direction="prev">
+                                <i class="fas fa-chevron-left"></i>
+                            </div>
+                            <div class="image-nav next" data-car-id="${car.id}" data-direction="next">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
                         </div>
                         <div class="car-details">
                             <h5>${car.name}</h5>
@@ -458,6 +679,60 @@
                     showCarDetails(carId);
                 });
             });
+            
+            // Add event listeners for image pagination
+            document.querySelectorAll('.image-dot').forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const carItem = this.closest('.car-item');
+                    const carId = parseInt(carItem.getAttribute('data-id'));
+                    const index = parseInt(this.getAttribute('data-index'));
+                    const car = cars.find(c => c.id === carId);
+                    
+                    if (car) {
+                        const imgElement = carItem.querySelector('.car-image');
+                        imgElement.src = car.images[index];
+                        imgElement.setAttribute('data-current-index', index);
+                        
+                        // Update active dot
+                        carItem.querySelectorAll('.image-dot').forEach(d => d.classList.remove('active'));
+                        this.classList.add('active');
+                    }
+                });
+            });
+            
+            // Add event listeners for prev/next buttons
+            document.querySelectorAll('.image-nav').forEach(nav => {
+                nav.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const carId = parseInt(this.getAttribute('data-car-id'));
+                    const direction = this.getAttribute('data-direction');
+                    const carItem = this.closest('.car-item');
+                    const imgElement = carItem.querySelector('.car-image');
+                    const currentIndex = parseInt(imgElement.getAttribute('data-current-index'));
+                    const car = cars.find(c => c.id === carId);
+                    
+                    if (car) {
+                        let newIndex;
+                        if (direction === 'prev') {
+                            newIndex = (currentIndex - 1 + car.images.length) % car.images.length;
+                        } else {
+                            newIndex = (currentIndex + 1) % car.images.length;
+                        }
+                        
+                        imgElement.src = car.images[newIndex];
+                        imgElement.setAttribute('data-current-index', newIndex);
+                        
+                        // Update active dot if it exists for this index
+                        carItem.querySelectorAll('.image-dot').forEach(dot => {
+                            const dotIndex = parseInt(dot.getAttribute('data-index'));
+                            if (dotIndex === newIndex) {
+                                carItem.querySelectorAll('.image-dot').forEach(d => d.classList.remove('active'));
+                                dot.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            });
         }
 
         // Show car details in modal
@@ -472,49 +747,63 @@
             document.getElementById('modalFuel').textContent = car.fuel;
             document.getElementById('modalTransmission').textContent = car.transmission;
             document.getElementById('modalDescription').textContent = car.description;
-            document.getElementById('modalImage').src = car.image;
             
-            // Update overview sidebar with selected car details
-            document.getElementById('overviewBody').textContent = car.body;
-            document.getElementById('overviewMileage').textContent = car.mileage + ' Miles';
-            document.getElementById('overviewFuel').textContent = car.fuel;
-            document.getElementById('overviewYear').textContent = car.year;
-            document.getElementById('overviewTransmission').textContent = car.transmission;
-            document.getElementById('overviewDrive').textContent = 'All-Wheel';
+            // Build carousel for multiple images
+            const carouselInner = document.getElementById('modalCarouselInner');
+            const carouselIndicators = document.getElementById('modalCarouselIndicators');
+            
+            carouselInner.innerHTML = '';
+            carouselIndicators.innerHTML = '';
+            
+            car.images.forEach((image, index) => {
+                // Add carousel item
+                carouselInner.innerHTML += `
+                    <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                        <img src="${image}" class="d-block w-100" alt="${car.name} image ${index+1}">
+                    </div>
+                `;
+                
+                // Add indicator
+                carouselIndicators.innerHTML += `
+                    <button type="button" data-bs-target="#modalImageCarousel" data-bs-slide-to="${index}"
+                        ${index === 0 ? 'class="active" aria-current="true"' : ''} aria-label="Slide ${index+1}">
+                    </button>
+                `;
+            });
             
             const modal = new bootstrap.Modal(document.getElementById('carDetailModal'));
             modal.show();
         }
 
         // Filter cars based on criteria
-        // function filterCars() {
-        //     const maxPrice = parseInt(document.getElementById('priceRange').value);
-        //     const selectedMake = document.getElementById('makeSelect').value.toLowerCase();
-        //     const selectedBodyType = document.getElementById('bodyTypeSelect').value.toLowerCase();
-        //     const selectedYear = document.getElementById('yearSelect').value;
-        //     const automaticSelected = document.getElementById('automaticCheck').checked;
-        //     const manualSelected = document.getElementById('manualCheck').checked;
+        function filterCars() {
+            const maxPrice = parseInt(document.getElementById('priceRange').value);
+            const selectedMake = document.getElementById('makeSelect').value.toLowerCase();
+            const selectedBodyType = document.getElementById('bodyTypeSelect').value.toLowerCase();
+            const selectedYear = document.getElementById('yearSelect').value;
+            const automaticSelected = document.getElementById('automaticCheck').checked;
+            const manualSelected = document.getElementById('manualCheck').checked;
             
-        //     return cars.filter(car => {
-        //         // Price filter
-        //         if (car.price > maxPrice) return false;
+            return cars.filter(car => {
+                // Price filter
+                if (car.price > maxPrice) return false;
                 
-        //         // Make filter
-        //         if (selectedMake && !car.name.toLowerCase().includes(selectedMake)) return false;
+                // Make filter
+                if (selectedMake && !car.name.toLowerCase().includes(selectedMake)) return false;
                 
-        //         // Body type filter
-        //         if (selectedBodyType && car.body.toLowerCase() !== selectedBodyType) return false;
+                // Body type filter
+                if (selectedBodyType && car.body.toLowerCase() !== selectedBodyType) return false;
                 
-        //         // Year filter
-        //         if (selectedYear && car.year.toString() !== selectedYear) return false;
+                // Year filter
+                if (selectedYear && car.year.toString() !== selectedYear) return false;
                 
-        //         // Transmission filter
-        //         if (!automaticSelected && car.transmission === 'Automatic') return false;
-        //         if (!manualSelected && car.transmission === 'Manual') return false;
+                // Transmission filter
+                if (!automaticSelected && car.transmission === 'Automatic') return false;
+                if (!manualSelected && car.transmission === 'Manual') return false;
                 
-        //         return true;
-        //     });
-        // }
+                return true;
+            });
+        }
 
         // Sort cars based on selected option
         function sortCars(carsToSort) {
@@ -556,6 +845,16 @@
         // Initialize the page
         document.addEventListener('DOMContentLoaded', function() {
             renderCarListings(cars);
+            
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
         });
     </script>
 </body>

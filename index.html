@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mercedes Car Specs Section</title>
+    <title>Car Specs Section</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* Custom CSS for Parallax Effect */
         .parallax {
-            background-image: url('assets/toyota1.jpg'); /* Replace with your image */
+            background-image: url('/assets/2015_ford_mustang.jpeg'); /* Replace with your image */
             background-attachment: fixed; /* Creates the parallax effect */
             background-position: center;
             background-repeat: no-repeat;
@@ -34,41 +33,101 @@
         }
 
         .footer {
-    background-color: #050B20;
-    color: white;
-    padding: 40px 0 20px;
+            background-color: #050B20;
+            color: white;
+            padding: 40px 0 20px;
+        }
+
+        .footer a {
+            color: #fff;
+            opacity: 0.8;
+        }
+
+        .footer a:hover {
+            opacity: 1;
+            color: #fff;
+        }
+
+        /* Transparent Navbar Styles */
+        /* Initial state - transparent navbar with white text */
+.navbar {
+    background-color: transparent !important;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 0;
+    transition: all 0.3s ease;
 }
 
-.footer a {
-    color: #fff;
-    opacity: 0.8;
+.navbar-brand, 
+.navbar-nav .nav-link {
+    color: white !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-.footer a:hover {
-    opacity: 1;
-    color: #fff;
+/* Scrolled state - white navbar with black text */
+.navbar.scrolled {
+    background-color: white !important;
+    padding: 5px 0;
+    position: fixed;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
+
+.navbar.scrolled .navbar-brand,
+.navbar.scrolled .navbar-nav .nav-link {
+    color: black !important;
+    text-shadow: none;
+}
+
+/* Hover states */
+.navbar-nav .nav-link:hover {
+    color: #ddd !important;
+}
+
+.navbar.scrolled .navbar-nav .nav-link:hover {
+    color: #555 !important;
+}
+        
+
+        /* Logo image styling */
+        .navbar-brand img {
+            height: 40px; /* Fixed height */
+            width: auto; /* Maintain aspect ratio */
+            max-width: 150px; /* Maximum width */
+            transition: all 0.3s ease; /* Smooth transition */
+        }
+
+        .navbar.scrolled .navbar-brand img {
+            height: 30px; /* Smaller when scrolled */
+        }
+
+        /* Adjust content to account for fixed navbar */
+        body {
+            padding-top: 0;
+        }
+
+        /* Ensure content isn't hidden behind navbar */
+        section:first-of-type {
+            margin-top: 0;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Navbar  -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Transparent Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">JA
-                <!-- <img src="#" alt="Logo" width="150" height="50"> -->
-            </a>
+            <a class="navbar-brand" href="index.html"><img src="/assets/ja-logo.jpeg" alt="logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
-                    
                     <li class="nav-item">
                         <a class="nav-link" href="vehicle.html">Vehicle listings</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html"> Contact</a>
+                        <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
@@ -78,24 +137,18 @@
         </div>
     </nav>
 
-    <!--  Section with Background Image  -->
+    <!-- Parallax Section with Background Image -->
     <section class="parallax">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 offset-md-6 text-end">
-                    <!-- <h2 class="display-4 fw-bold">Mercedes-Benz S-Class</h2> -->
-                    <p class="lead">
-                        Engine: 3.0L Inline-6 Turbo<br>
-                        Horsepower: 429 HP<br>
-                        Torque: 384 lb-ft<br>
-                        0-60 mph: 4.5 seconds<br>
-                        Top Speed: 155 mph (electronically limited)
-                    </p>
+                    <!-- Optional content can go here -->
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Rest of your content remains unchanged -->
     <!-- Explore Our Favourite Brands Section -->
     <section class="container my-5">
         <h2 class="text-center mb-5">Explore Our Favourite Brands</h2>
@@ -138,11 +191,7 @@
         <h2 class="text-center mb-5">Explore Our Car Collection</h2>
         <div id="carCollectionCarousel" class="carousel slide" data-bs-ride="carousel">
             <!-- Carousel Indicators -->
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carCollectionCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carCollectionCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carCollectionCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
+            
     
             <!-- Carousel Items -->
             <div class="carousel-inner">
@@ -152,9 +201,9 @@
                         <!-- Card 1 -->
                         <div class="col-md-6">
                             <div class="card h-100 shadow-sm">
-                                <img src="assets/toyota1.jpg" class="card-img-top rounded-top" alt="Car Image">
+                                <img src="assets/2013_lexus_rx.jpeg" class="card-img-top rounded-top" alt="Car Image">
                                 <div class="card-body">
-                                    <h5 class="card-title">Toyota</h5>
+                                    <h5 class="card-title">Lexus RS350</h5>
                                     <h6 class="card-subtitle mb-2 text-muted">2023</h6>
                                     <hr class="my-3">
                                     <div class="d-flex justify-content-between mb-3">
@@ -165,7 +214,7 @@
                                     <hr class="my-3">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="h5 mb-0">$75,000</div>
-                                        <a href="#" class="btn btn-primary btn-sm">View Details</a>
+                                       
                                     </div>
                                 </div>
                             </div>
@@ -173,9 +222,9 @@
                         <!-- Card 2 -->
                         <div class="col-md-6">
                             <div class="card h-100 shadow-sm">
-                                <img src="assets/pexels-mikebirdy-2365572-1.jpg" class="card-img-top rounded-top" alt="Car Image">
+                                <img src="assets/audiBack.jpg" class="card-img-top rounded-top" alt="Car Image">
                                 <div class="card-body">
-                                    <h5 class="card-title">BMW 7 Series</h5>
+                                    <h5 class="card-title">Audi</h5>
                                     <h6 class="card-subtitle mb-2 text-muted">2022</h6>
                                     <hr class="my-3">
                                     <div class="d-flex justify-content-between mb-3">
@@ -186,7 +235,7 @@
                                     <hr class="my-3">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="h5 mb-0">$70,000</div>
-                                        <a href="#" class="btn btn-primary btn-sm">View Details</a>
+
                                     </div>
                                 </div>
                             </div>
@@ -200,9 +249,9 @@
                         <!-- Card 3 -->
                         <div class="col-md-6">
                             <div class="card h-100 shadow-sm">
-                                <img src="assets/toyota1.jpg" class="card-img-top rounded-top" alt="Car Image">
+                                <img src="assets/2021_ford_ranger-back.jpeg" class="card-img-top rounded-top" alt="Car Image">
                                 <div class="card-body">
-                                    <h5 class="card-title">Audi A8</h5>
+                                    <h5 class="card-title">Ford Pickup Truck</h5>
                                     <h6 class="card-subtitle mb-2 text-muted">2021</h6>
                                     <hr class="my-3">
                                     <div class="d-flex justify-content-between mb-3">
@@ -213,7 +262,7 @@
                                     <hr class="my-3">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="h5 mb-0">$65,000</div>
-                                        <a href="#" class="btn btn-primary btn-sm">View Details</a>
+
                                     </div>
                                 </div>
                             </div>
@@ -221,68 +270,20 @@
                         <!-- Card 4 -->
                         <div class="col-md-6">
                             <div class="card h-100 shadow-sm">
-                                <img src="assets/lexus1.jpeg" class="card-img-top rounded-top" alt="Car Image">
+                                <img src="assets/vanBack.jpg" class="card-img-top rounded-top" alt="Car Image">
                                 <div class="card-body">
-                                    <h5 class="card-title">Tesla Model S</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">2023</h6>
+                                    <h5 class="card-title">Ford Cargo Van</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">2018</h6>
                                     <hr class="my-3">
                                     <div class="d-flex justify-content-between mb-3">
-                                        <span class="text-muted">20,000 miles</span>
-                                        <span class="text-muted">Electric</span>
-                                        <span class="text-muted">Automatic</span>
-                                    </div>
-                                    <hr class="my-3">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="h5 mb-0">$85,000</div>
-                                        <a href="#" class="btn btn-primary btn-sm">View Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Slide 3 -->
-                <div class="carousel-item">
-                    <div class="row g-4">
-                        <!-- Card 5 -->
-                        <div class="col-md-6">
-                            <div class="card h-100 shadow-sm">
-                                <img src="https://via.placeholder.com/400x200" class="card-img-top rounded-top" alt="Car Image">
-                                <div class="card-body">
-                                    <h5 class="card-title">Porsche Panamera</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">2022</h6>
-                                    <hr class="my-3">
-                                    <div class="d-flex justify-content-between mb-3">
-                                        <span class="text-muted">25,000 miles</span>
+                                        <span class="text-muted">50,000 miles</span>
                                         <span class="text-muted">Petrol</span>
                                         <span class="text-muted">Automatic</span>
                                     </div>
                                     <hr class="my-3">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="h5 mb-0">$90,000</div>
-                                        <a href="#" class="btn btn-primary btn-sm">View Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Card 6 -->
-                        <div class="col-md-6">
-                            <div class="card h-100 shadow-sm">
-                                <img src="https://via.placeholder.com/400x200" class="card-img-top rounded-top" alt="Car Image">
-                                <div class="card-body">
-                                    <h5 class="card-title">Lexus LS</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">2021</h6>
-                                    <hr class="my-3">
-                                    <div class="d-flex justify-content-between mb-3">
-                                        <span class="text-muted">35,000 miles</span>
-                                        <span class="text-muted">Hybrid</span>
-                                        <span class="text-muted">Automatic</span>
-                                    </div>
-                                    <hr class="my-3">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="h5 mb-0">$60,000</div>
-                                        <a href="#" class="btn btn-primary btn-sm">View Details</a>
+
                                     </div>
                                 </div>
                             </div>
@@ -292,230 +293,243 @@
             </div>
 
             <!-- Carousel Controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#carCollectionCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carCollectionCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-
+            <button class="carousel-control-prev" type="button" data-bs-target="#carCollectionCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carCollectionCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     </section>
 
     <!-- Why Choose Us Section -->
-<section class="py-5" style="background-color: #050B20;">
-    <div class="container my-5">
-        <div class="text-center mb-5">
-            <h2 class="display-4 fw-bold text-white mb-3">Why Choose Us</h2>
-            <p class="lead text-white-50">Experience excellence in automotive retail with our premium services</p>
-        </div>
+    <section class="py-5" style="background-color: #050B20;">
+        <div class="container my-5">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold text-white mb-3">Why Choose Us</h2>
+                <p class="lead text-white-50">Experience excellence in automotive retail with our premium services</p>
+            </div>
 
+            <div class="row g-4">
+                <!-- Quality Assurance -->
+                <div class="col-md-3">
+                    <div class="card bg-transparent border-0 text-center h-100">
+                        <div class="card-body">
+                            <div class="text-primary mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/>
+                                    <path d="m9 12 2 2 4-4"/>
+                                </svg>
+                            </div>
+                            <h4 class="card-title mb-3 text-white">Quality Assured</h4>
+                            <p class="card-text text-white-50">Every vehicle undergoes rigorous inspection and certification process, ensuring you drive home with confidence.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Expert Team -->
+                <div class="col-md-3">
+                    <div class="card bg-transparent border-0 text-center h-100">
+                        <div class="card-body">
+                            <div class="text-primary mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                            </div>
+                            <h4 class="card-title mb-3 text-white">Expert Team</h4>
+                            <p class="card-text text-white-50">Our experienced professionals provide personalized service and expert guidance throughout your car buying journey.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Financing Options -->
+                <div class="col-md-3">
+                    <div class="card bg-transparent border-0 text-center h-100">
+                        <div class="card-body">
+                            <div class="text-primary mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect width="20" height="12" x="2" y="6" rx="2"/>
+                                    <circle cx="12" cy="12" r="2"/>
+                                    <path d="M6 12h.01M18 12h.01"/>
+                                </svg>
+                            </div>
+                            <h4 class="card-title mb-3 text-white">Flexible Financing</h4>
+                            <p class="card-text text-white-50">Competitive financing options tailored to your needs, making your dream car more accessible than ever.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- After Sales Service -->
+                <div class="col-md-3">
+                    <div class="card bg-transparent border-0 text-center h-100">
+                        <div class="card-body">
+                            <div class="text-primary mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                                </svg>
+                            </div>
+                            <h4 class="card-title mb-3 text-white">Lifetime Support</h4>
+                            <p class="card-text text-white-50">Comprehensive after-sales service and maintenance support to keep your vehicle performing at its best.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Buy/Sell Section -->
+    <section class="container my-5">
         <div class="row g-4">
-            <!-- Quality Assurance -->
-            <div class="col-md-3">
-                <div class="card bg-transparent border-0 text-center h-100">
-                    <div class="card-body">
-                        <div class="text-primary mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/>
-                                <path d="m9 12 2 2 4-4"/>
-                            </svg>
+            <!-- Looking to Buy Box -->
+            <div class="col-md-6">
+                <div class="card h-100 text-white position-relative" style="background-color: #E9F2FF;">
+                    <div class="card-body p-5" style="padding-top: 10px; padding-bottom: 10px;">
+                        <div class="ps-4 py-5">
+                            <h3 class="card-title mb-4 text-dark">Are you looking for a car?</h3>
+                            <p class="card-text mb-4 text-dark">Find your dream car from our extensive collection of premium vehicles.</p>
+                            <!-- Flexbox to align button and icon -->
+                            <div class="d-flex align-items-center justify-content-between">
+                                <a href="vehicle.html" class="btn btn-primary">Browse Cars</a>
+                                <img src="assets/electric-car.svg.png" alt="Car Icon" width="50" height="50">
+                            </div>
                         </div>
-                        <h4 class="card-title mb-3 text-white">Quality Assured</h4>
-                        <p class="card-text text-white-50">Every vehicle undergoes rigorous inspection and certification process, ensuring you drive home with confidence.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Expert Team -->
-            <div class="col-md-3">
-                <div class="card bg-transparent border-0 text-center h-100">
-                    <div class="card-body">
-                        <div class="text-primary mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                <circle cx="9" cy="7" r="4"/>
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                            </svg>
-                        </div>
-                        <h4 class="card-title mb-3 text-white">Expert Team</h4>
-                        <p class="card-text text-white-50">Our experienced professionals provide personalized service and expert guidance throughout your car buying journey.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Financing Options -->
-            <div class="col-md-3">
-                <div class="card bg-transparent border-0 text-center h-100">
-                    <div class="card-body">
-                        <div class="text-primary mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect width="20" height="12" x="2" y="6" rx="2"/>
-                                <circle cx="12" cy="12" r="2"/>
-                                <path d="M6 12h.01M18 12h.01"/>
-                            </svg>
-                        </div>
-                        <h4 class="card-title mb-3 text-white">Flexible Financing</h4>
-                        <p class="card-text text-white-50">Competitive financing options tailored to your needs, making your dream car more accessible than ever.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- After Sales Service -->
-            <div class="col-md-3">
-                <div class="card bg-transparent border-0 text-center h-100">
-                    <div class="card-body">
-                        <div class="text-primary mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-                            </svg>
-                        </div>
-                        <h4 class="card-title mb-3 text-white">Lifetime Support</h4>
-                        <p class="card-text text-white-50">Comprehensive after-sales service and maintenance support to keep your vehicle performing at its best.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="container my-5">
-    <div class="row g-4">
-        <!-- Looking to Buy Box -->
-        <div class="col-md-6">
-            <div class="card h-100 text-white position-relative" style="background-color: #E9F2FF;">
-                <div class="card-body p-5" style="padding-top: 10px; padding-bottom: 10px;">
-                    <div class="ps-4 py-5">
-                        <h3 class="card-title mb-4 text-dark">Are you looking for a car?</h3>
-                        <p class="card-text mb-4 text-dark">Find your dream car from our extensive collection of premium vehicles.</p>
-                        <!-- Flexbox to align button and icon -->
-                        <div class="d-flex align-items-center justify-content-between">
-                            <a href="vehicle.html" class="btn btn-primary">Browse Cars</a>
-                            <img src="assets/electric-car.svg.png" alt="Car Icon" width="50" height="50">
+            <!-- Looking to Sell Box -->
+            <div class="col-md-6">
+                <div class="card h-100 position-relative" style="background-color: #FFE4E8;">
+                    <div class="card-body p-5" style="padding-top: 10px; padding-bottom: 10px;">
+                        <div class="ps-4 py-5">
+                            <h3 class="card-title mb-4 text-dark">Do you want to sell a car?</h3>
+                            <p class="card-text mb-4 text-dark">Get the best value for your car with our hassle-free selling process.</p>
+                            <!-- Flexbox to align button and icon -->
+                            <div class="d-flex align-items-center justify-content-between">
+                                <a href="uploadVehicle.html" class="btn btn-dark btn-primary">Sell Your Car</a>
+                                <img src="assets/electric-car2.svg.png" alt="Sell Icon" width="50" height="50">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Looking to Sell Box -->
-        <div class="col-md-6">
-            <div class="card h-100 position-relative" style="background-color: #FFE4E8;">
-                <div class="card-body p-5" style="padding-top: 10px; padding-bottom: 10px;">
-                    <div class="ps-4 py-5">
-                        <h3 class="card-title mb-4 text-dark">Do you want to sell a car?</h3>
-                        <p class="card-text mb-4 text-dark">Get the best value for your car with our hassle-free selling process.</p>
-                        <!-- Flexbox to align button and icon -->
-                        <div class="d-flex align-items-center justify-content-between">
-                            <a href="#" class="btn btn-dark btn-primary">Sell Your Car</a>
-                            <img src="assets/electric-car2.svg.png" alt="Sell Icon" width="50" height="50">
-                        </div>
-                    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <!-- Subscription Section -->
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h4>Join Jaderen</h4>
+                    <p>Receive pricing updates, shopping tips & more!</p>
+                    <form id="subscribeForm" class="d-flex justify-content-center">
+                        <input type="email" class="form-control me-2" placeholder="Your email address" style="max-width: 300px;" required>
+                        <button id="subscribeBtn" class="btn btn-primary" type="submit">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+    
+            <!-- Other Sections -->
+            <div class="row mt-4">
+                <!-- Quick Links Section -->
+                <div class="col-md-4">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Privacy Notice</a></li>
+                    </ul>
+                </div>
+            
+                <!-- Our Brands Section -->
+                <div class="col-md-4">
+                    <h5>Our Brands</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Toyota</a></li>
+                        <li><a href="#">Pesache</a></li>
+                        <li><a href="#">Audit</a></li>
+                        <li><a href="#">BMW</a></li>
+                        <li><a href="#">Volkswagen</a></li>
+                    </ul>
+                </div>
+            
+                <!-- Vehicles Type Section -->
+                <div class="col-md-4">
+                    <h5>Vehicles Type</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Sedan</a></li>
+                        <li><a href="#">Hatchback</a></li>
+                        <li><a href="#">SUV</a></li>
+                        <li><a href="#">Hybrid</a></li>
+                        <li><a href="#">Convertible</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Social Media and Copyright Section -->
+            <div class="row mt-4">
+                <div class="col-md-12 text-center">
+                    <h5>Connect With Us</h5>
+                    <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="col-md-12 text-center mt-3">
+                    <p>&copy; 2024 Compix.com. All rights reserved.</p>
+                    <p><a href="#">Terms & Conditions</a> | <a href="#">Privacy Notice</a></p>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-<footer class="footer">
-    <div class="container">
-        <!-- Subscription Section (Full Width) -->
-        <div class="row">
-            <div class="col-12 text-center">
-                <h4>Join BoxCar</h4>
-                <p>Receive pricing updates, shopping tips & more!</p>
-                <form class="d-flex justify-content-center">
-                    <input type="email" class="form-control me-2" placeholder="Your email address" style="max-width: 300px;">
-                    <button class="btn btn-primary">Sign Up</button>
-                </form>
-            </div>
-        </div>
-
-        <!-- Other Sections -->
-        <div class="row mt-4">
-            <!-- Quick Links Section -->
-            <div class="col-md-3">
-                <h5>Company</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Terms</a></li>
-                    <li><a href="#">Privacy Notice</a></li>
-                </ul>
-            </div>
-        
-            <!-- Our Brands Section -->
-            <div class="col-md-3">
-                <h5>Our Brands</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#">Toyota</a></li>
-                    <li><a href="#">Pesache</a></li>
-                    <li><a href="#">Audit</a></li>
-                    <li><a href="#">BMW</a></li>
-                    <li><a href="#">Volkswagen</a></li>
-                </ul>
-            </div>
-        
-            <!-- Vehicles Type Section -->
-            <div class="col-md-3">
-                <h5>Vehicles Type</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#">Sedan</a></li>
-                    <li><a href="#">Hatchback</a></li>
-                    <li><a href="#">SUV</a></li>
-                    <li><a href="#">Hybrid</a></li>
-                    <li><a href="#">Convertible</a></li>
-                </ul>
-            </div>
-        
-            <!-- Mobile App Section -->
-            <div class="col-md-3">
-                <h5>Our Mobile App</h5>
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="https://apps.apple.com/" target="_blank">
-                            <i class="fab fa-apple fa-lg"></i> Download on the Apple Store
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://play.google.com/store" target="_blank">
-                            <i class="fab fa-google-play fa-lg"></i> Get it on Google Play
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        
-        <!-- Social Media and Copyright Section -->
-        <div class="row mt-4">
-            <div class="col-md-12 text-center">
-                <h5>Connect With Us</h5>
-                <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="me-3"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-            <div class="col-md-12 text-center mt-3">
-                <p>&copy; 2024 Compix.com. All rights reserved.</p>
-                <p><a href="#">Terms & Conditions</a> | <a href="#">Privacy Notice</a></p>
-            </div>
-        </div>
-    </div>
-</footer>
-
-
-
-
-
-<!-- <video src="https://mdbcdn.b-cdn.net/img/video/forest.mp4" type="video/mp4" loop class="hover-to-play w-100">
-</video> -->
+    </footer>
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    
+    <!-- Navbar Scroll Effect -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Subscription form handler
+        document.getElementById('subscribeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = this.querySelector('input[type="email"]').value;
+            
+            const notification = document.createElement('div');
+            notification.className = 'alert alert-success position-fixed top-0 end-0 m-3';
+            notification.style.zIndex = '1100';
+            notification.innerHTML = `
+                <i class="fas fa-check-circle me-2"></i>
+                Thank you for subscribing! We'll send updates to ${email}.
+                <button type="button" class="btn-close ms-2" data-bs-dismiss="alert"></button>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 5000);
+            
+            this.reset();
+        });
+    </script>
 </body>
 </html>

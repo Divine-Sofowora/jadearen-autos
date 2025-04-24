@@ -1,212 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Car Explorer</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* Banner Styling */
-        .about-banner {
-            background: url('/assets/carBackground.jpg') no-repeat center center/cover;
-            height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            position: relative;
-        }
-        .about-banner::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-        }
-        .about-content {
-            position: relative;
-            z-index: 1;
-        }
-        .section-content {
-            padding: 60px 20px;
-        }
-        .ceo-img {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .location-box {
-            background: black;
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-        }
-        .location-box h2 {
-            color: white;
-        }
-        .testimonial-item {
-            background: #f8f9fa;
-            padding: 20px;
-            margin: 10px 0;
-            border-radius: 8px;
-        }
-        .testimonial-item p {
-            font-style: italic;
-        }
-        .social-icons a {
-            margin: 0 10px;
-            color: white;
-            font-size: 20px;
-        }
-        /* Add some animation for the About Us text */
-        .about-banner h1, .about-banner p {
-            opacity: 0;
-            animation: fadeInUp 1s forwards;
-        }
-        .about-banner h1 {
-            animation-delay: 0.5s;
-        }
-        .about-banner p {
-            animation-delay: 1s;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Car Explorer</title>
+  <meta name="description" content="Learn about Car Explorer - your go-to platform for car discovery, comparisons, and reviews." />
+
+  <!-- PERFORMANCE -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <!-- BOOTSTRAP + ICONS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <!-- Font Awesome for footer icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <!-- AOS ANIMATIONS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    /* Custom Styles */
+    .about-banner {
+      background: url('/assets/carBackground.jpg') no-repeat center center/cover;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      color: white;
+      position: relative;
+    }
+    .about-banner::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    .about-content {
+      position: relative;
+      z-index: 1;
+    }
+    .mission-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .team-card {
+      transition: all 0.3s ease;
+      background-color: #f8f9fa;
+      border: 1px solid #dee2e6;
+    }
+    .team-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+    }
+    .cta-section {
+      background-color: #ffffff;
+      color: #212529;
+    }
+    .navbar-brand img {
+            height: 40px; /* Fixed height */
+            width: auto; /* Maintain aspect ratio */
+            max-width: 150px; /* Maximum width */
+            transition: all 0.3s ease; /* Smooth transition */
         }
 
-        /* Animations for scrolling */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
+    /* NEW FOOTER STYLES */
+    .footer {
+      background-color: #050B20;
+      color: white;
+      padding: 40px 0 20px;
+    }
+
+    .footer a {
+      color: #fff;
+      opacity: 0.8;
+    }
+
+    .footer a:hover {
+      opacity: 1;
+      color: #fff;
+    }
+
+    .footer ul.list-unstyled li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer ul.list-unstyled li a:hover {
+      color: #FFD700;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .about-banner {
+        height: 50vh;
+        text-align: center;
+      }
+      .about-banner h1 {
+        font-size: 2.5rem;
+      }
+      .footer {
+        text-align: center;
+      }
+      .footer .d-flex {
+        justify-content: center !important;
+      }
+      .footer .text-md-start,
+      .footer .text-md-end {
+        text-align: center !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">JA
-                <!-- <img src="#" alt="Logo" width="150" height="50"> -->
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="vehicle.html">Vehicle listings</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation" aria-label="Main Navigation">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"><img src="/assets/ja-logo.jpeg" alt="logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="vehicle.html">Vehicle listings</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html" aria-current="page">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO BANNER -->
+  <header class="about-banner" role="banner">
+    <div class="about-content container">
+      <h1 class="display-3 fw-bold mb-3">Driven by <span class="text-warning">Passion</span>, Built for <span class="text-warning">You</span></h1>
+      <p class="lead mb-4">10,000+ car lovers trust us to find their perfect match.</p>
+    </div>
+  </header>
+
+  <!-- ABOUT SECTION -->
+  <section class="container py-5" data-aos="fade-up">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="mb-4">About Our Company</h2>
+        <p class="lead">Car Explorer is dedicated to revolutionizing the car discovery experience.</p>
+        <p>Founded in 2018 in Windsor, Ontario, we started with a simple goal: to make car buying transparent and stress-free. Today, we're Canada's fastest-growing car discovery platform.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION SECTION -->
+  <section class="py-5 bg-light">
+    <div class="container text-center" data-aos="fade-up">
+      <h2 class="mb-5">Our Mission</h2>
+      <div class="row g-4">
+        <div class="col-md-3">
+          <div class="p-3 bg-white rounded shadow-sm h-100">
+            <i class="bi bi-search-heart mission-icon text-primary"></i>
+            <h5>Simplify Discovery</h5>
+            <p class="small">Cut through the noise with smart filters.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="p-3 bg-white rounded shadow-sm h-100">
+            <i class="bi bi-graph-up mission-icon text-primary"></i>
+            <h5>Transparent Comparisons</h5>
+            <p class="small">Side-by-side specs with no bias.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="p-3 bg-white rounded shadow-sm h-100">
+            <i class="bi bi-shield-check mission-icon text-primary"></i>
+            <h5>Trusted Reviews</h5>
+            <p class="small">From real owners, not marketers.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="p-3 bg-white rounded shadow-sm h-100">
+            <i class="bi bi-lightning-charge mission-icon text-primary"></i>
+            <h5>Instant Alerts</h5>
+            <p class="small">Be first to know about new listings.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES SECTION -->
+  <section id="values" class="container py-5" data-aos="fade-up">
+    <h2 class="text-center mb-5">Our Core Values</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="list-group">
+          <div class="list-group-item border-0 py-3">
+            <div class="d-flex align-items-center">
+              <div class="bg-primary bg-opacity-10 p-2 rounded me-3">
+                <i class="bi bi-rocket text-primary fs-4"></i>
+              </div>
+              <div>
+                <h5 class="mb-1">Innovation</h5>
+                <p class="mb-0">We constantly evolve to deliver cutting-edge tools for car enthusiasts.</p>
+              </div>
+            </div>
+          </div>
+          <div class="list-group-item border-0 py-3">
+            <div class="d-flex align-items-center">
+              <div class="bg-primary bg-opacity-10 p-2 rounded me-3">
+                <i class="bi bi-shield-check text-primary fs-4"></i>
+              </div>
+              <div>
+                <h5 class="mb-1">Integrity</h5>
+                <p class="mb-0">No hidden fees, no fake reviews - just honest car shopping.</p>
+              </div>
+            </div>
+          </div>
+          <div class="list-group-item border-0 py-3">
+            <div class="d-flex align-items-center">
+              <div class="bg-primary bg-opacity-10 p-2 rounded me-3">
+                <i class="bi bi-people text-primary fs-4"></i>
+              </div>
+              <div>
+                <h5 class="mb-1">Community</h5>
+                <p class="mb-0">We're car lovers serving car lovers.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM SECTION -->
+  <section class="container py-5" data-aos="fade-up">
+    <h2 class="text-center mb-5">Meet the Team</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card border-0 shadow-sm h-100 team-card">
+          <div class="card-body text-center">
+            <h5 class="card-title">Jamiu Amuda</h5>
+            <p class="text-danger fw-bold">Founder & CEO</p>
+            <p class="card-text">Former automotive engineer with a vision for transparent car buying.</p>
+            <a href="#" class="btn btn-sm btn-outline-danger">LinkedIn <i class="bi bi-arrow-up-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-5 cta-section" data-aos="fade-up">
+    <div class="container text-center">
+      <h2 class="display-5 fw-bold mb-3">Ready to Find Your Dream Car?</h2>
+      <p class="lead mb-4">Join 10,000+ happy drivers today.</p>
+      <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
+        <a href="vehicle.html" class="btn btn-dark btn-lg px-4 py-2 fw-bold">
+          Browse Inventory <i class="bi bi-arrow-right ms-2"></i>
+        </a>
+        <a href="contact.html" class="btn btn-outline-dark btn-lg px-4 py-2">
+          Get Personalized Help
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW FOOTER -->
+  <footer class="footer">
+    <div class="container">
+        <!-- Subscription Section -->
+        <div class="row">
+            <div class="col-12 text-center">
+                <h4>Join Jaderen</h4>
+                <p>Receive pricing updates, shopping tips & more!</p>
+                <form id="subscribeForm" class="d-flex justify-content-center">
+                    <input type="email" class="form-control me-2" placeholder="Your email address" style="max-width: 300px;" required>
+                    <button id="subscribeBtn" class="btn btn-primary" type="submit">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    
+        <!-- Other Sections -->
+        <div class="row mt-4">
+            <!-- Quick Links Section -->
+            <div class="col-md-4">
+                <h5>Company</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Privacy Notice</a></li>
+                </ul>
+            </div>
+        
+            <!-- Our Brands Section -->
+            <div class="col-md-4">
+                <h5>Our Brands</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Toyota</a></li>
+                    <li><a href="#">Pesache</a></li>
+                    <li><a href="#">Audit</a></li>
+                    <li><a href="#">BMW</a></li>
+                    <li><a href="#">Volkswagen</a></li>
+                </ul>
+            </div>
+        
+            <!-- Vehicles Type Section -->
+            <div class="col-md-4">
+                <h5>Vehicles Type</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Sedan</a></li>
+                    <li><a href="#">Hatchback</a></li>
+                    <li><a href="#">SUV</a></li>
+                    <li><a href="#">Hybrid</a></li>
+                    <li><a href="#">Convertible</a></li>
                 </ul>
             </div>
         </div>
-    </nav>
-
-    <!-- About Section Banner -->
-    <div class="about-banner">
-        <div class="about-content">
-            <h1 class="display-4">About Us</h1>
-            <p class="lead">Discover our passion for cars and the journey behind this project.</p>
-        </div>
-    </div>
-
-    <!-- About Company Section -->
-    <div class="container section-content text-center">
-        <h2 class="mb-4">About Our Company</h2>
-        <p class="lead">Car Explorer is dedicated to revolutionizing the car discovery experience. Our platform allows users to explore, compare, and review cars effortlessly.</p>
-        <p>With a deep commitment to innovation, we provide a seamless digital showroom for car enthusiasts, dealers, and manufacturers. Our advanced search and filtering tools make it easier than ever to find the perfect car that matches your preferences.</p>
-    </div>
-
-    <!-- Company Values Section -->
-    <div class="container section-content text-center">
-        <h2 class="mb-4">Our Core Values</h2>
-        <ul class="list-group">
-            <li class="list-group-item">Innovation: We constantly strive for creative solutions in the automotive world.</li>
-            <li class="list-group-item">Integrity: We operate with transparency and honesty in everything we do.</li>
-            <li class="list-group-item">Customer-Centric: Our users are at the heart of our operations and decisions.</li>
-            <li class="list-group-item">Sustainability: We promote environmentally-friendly options in our services.</li>
-        </ul>
-    </div>
-
-    <!-- Testimonials Section -->
-    <div class="container section-content text-center">
-        <h2 class="mb-4">What Our Users Say</h2>
-        <div class="testimonial-item">
-            <p>"Car Explorer has made finding my dream car so much easier! The platform is intuitive, and I love the detailed comparisons." - Okoya.</p>
-        </div>
-        <div class="testimonial-item">
-            <p>"I’ve never had a smoother car-buying experience. The reviews and recommendations are spot on." - Ayo.</p>
-        </div>
-    </div>
-
-    <!-- Meet Our CEO -->
-    <div class="container section-content text-center">
-        <h2 class="mb-4">Meet Our CEO</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-4 text-center">
-                <img src="assets/ceo.jpg" alt="CEO Picture" class="ceo-img">
-                <h4 class="mt-3">Jamiu Amuda</h4>
-                <p>Founder & CEO</p>
-                <p class="lead">Jamiu Amuda is a visionary leader with years of experience in the automotive and technology industries. His passion for cars and innovation led to the creation of Car Explorer, an intuitive platform that connects car buyers with the perfect vehicle.</p>
-                <p>Under his leadership, Car Explorer has grown into a trusted name in the automotive world, delivering cutting-edge solutions to car enthusiasts and professionals alike.</p>
+        
+        <!-- Social Media and Copyright Section -->
+        <div class="row mt-4">
+            <div class="col-md-12 text-center">
+                <h5>Connect With Us</h5>
+                <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="me-3"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="col-md-12 text-center mt-3">
+                <p>&copy; 2024 Compix.com. All rights reserved.</p>
+                <p><a href="#">Terms & Conditions</a> | <a href="#">Privacy Notice</a></p>
             </div>
         </div>
     </div>
+  </footer>
 
-    <!-- Company Location -->
-    <div class="container section-content text-center">
-        <div class="location-box">
-            <h2 class="mb-4">Our Location</h2>
-            <p>Car Explorer Headquarters</p>
-            <p>925 Provincial Road, Windsor, ON N8W5V9</p>
-            <p>Sales: (519) 250-5500</p>
-            <button class="btn btn-danger"><i class="bi bi-geo-alt-fill"></i> Get Directions</button>
-            <button class="btn btn-danger"><i class="bi bi-telephone-fill"></i> Send to Phone</button>
-        </div>
-    </div>
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof AOS !== 'undefined') {
+        AOS.init({
+          duration: 800,
+          easing: 'ease-in-out'
+        });
+      }
 
-    <!-- Call to Action -->
-    <div class="container text-center section-content">
-        <h2 class="mb-4">Join Us on Our Journey</h2>
-        <p class="lead">Be a part of the automotive revolution. Explore, review, and share your car experiences.</p>
-        <a href="#" class="btn btn-primary btn-lg mt-3">Explore Now</a>
-        <div class="mt-4">
-            <h4>Subscribe to Our Newsletter</h4>
-            <input type="email" class="form-control w-50 mx-auto" placeholder="Enter your email">
-            <button class="btn btn-success mt-3">Subscribe</button>
-        </div>
-    </div>
-
-    <!-- Social Media Links -->
-    <div class="container text-center mt-4">
-        <div class="social-icons">
-            <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
-            <a href="#" target="_blank"><i class="bi bi-twitter"></i></a>
-            <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
-            <a href="#" target="_blank"><i class="bi bi-linkedin"></i></a>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center p-4">
-        <p class="mb-0">&copy; 2025 Car Explorer. All Rights Reserved.</p>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      // Subscription form handler
+      document.getElementById('subscribeForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const email = this.querySelector('input[type="email"]').value;
+        
+        const notification = document.createElement('div');
+        notification.className = 'alert alert-success position-fixed top-0 end-0 m-3';
+        notification.style.zIndex = '1100';
+        notification.innerHTML = `
+          <i class="fas fa-check-circle me-2"></i>
+          Thank you for subscribing! We'll send updates to ${email}.
+          <button type="button" class="btn-close ms-2" data-bs-dismiss="alert"></button>
+        `;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+          notification.remove();
+        }, 5000);
+        
+        this.reset();
+      });
+    });
+  </script>
 </body>
 </html>
